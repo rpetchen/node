@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-test-app",
+  "version": "1.0.0",
+  "description": "Node JS Test App",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
