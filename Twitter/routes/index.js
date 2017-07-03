@@ -13,8 +13,7 @@ twitProfile.twitProfile((err, results) => {
 		console.log(err)
 	}
 	else if(results){
-		
-	// res.send(results.twitTimeline[0].user.screen_name)
+	
 	res.render('home', results)
 }
 })
