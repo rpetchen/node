@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+
+ div.app--tweet
+  form
+   .circle--fluid
+    .circle--fluid--cell.circle--fluid--primary.align-bottom.app--tweet--post
+     .app-avatar(style="background-image: url(static/img/m-spore.png)")
+      img(src="static/img/m-spore.png")
+     textarea.circle--textarea--input#tweet-textarea(placeholder!="What's happening?")
+     strong.app-tweet--char#tweet-char 140
+
+    div.circle--fluid--cell.align-bottom
+     button.button-primary Tweet
