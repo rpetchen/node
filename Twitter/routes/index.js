@@ -2,8 +2,10 @@ const express = require('express')
 const router = express.Router()
 const app = express()
 const moment = require('moment')
-
+const postTwit = require('../js/postTwit.js')
 const twitProfile = require('../js/twit.js')
+
+
 
 
 
@@ -24,10 +26,37 @@ twitProfile.twitProfile((err, results) => {
 		
 		})
 
-	// res.send(results.twitMessages)
+	// res.send(results)
 	res.render('home', results)
 }
 })
 })
+
+router.post('/post', (req,res) =>{
+
+if (req.body.postText){
+var tweetContent = req.body.postText
+postTwit.postTwit(tweetContent, (err,results) => {
+	if (err){
+	res.send('Unable to retrieve results')
+	console.log(err)	
+	}
+else if (results){
+	res.redirect('/')
+}
+
+else {
+	res.redirect('/')
+}
+})
+}
+})
+
+
+router.use ((req, res) => {
+	res.send('404 Page not found')
+})
+
+
 
 module.exports = router
